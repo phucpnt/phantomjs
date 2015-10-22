@@ -74,7 +74,7 @@ kew.resolve(true)
 
     try {
       // Ensure executable is executable by all users
-      fs.chmodSync(location, '755')
+      fs.chmodSync(location, process.platform === 'win32'? '666': '755')
     } catch (err) {
       if (err.code == 'ENOENT') {
         console.error('chmod failed: phantomjs was not successfully copied to', location)
