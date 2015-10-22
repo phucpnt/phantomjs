@@ -69,7 +69,7 @@ kew.resolve(true)
   })
   .then(function () {
     var location = process.platform === 'win32' ?
-        path.join(pkgPath, 'phantomjs.exe') :
+        path.join(pkgPath, 'bin', 'phantomjs.exe') :
         path.join(pkgPath, 'bin' ,'phantomjs')
 
     try {
