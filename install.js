@@ -77,7 +77,7 @@ kew.resolve(true)
       fs.chmodSync(location, process.platform === 'win32'? '666': '755')
     } catch (err) {
       if (err.code == 'ENOENT') {
-        console.error('chmod failed: phantomjs was not successfully copied to', location)
+        console.error('>>> chmod failed: phantomjs was not successfully copied to', location, process.platform)
         exit(1)
       }
       throw err
